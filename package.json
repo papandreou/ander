@@ -1,6 +1,6 @@
 {
   "name": "ander",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use the \"and\" list patterns from CLDR for rendering lists of items in a locale-specific format",
   "author": "Andreas Lind <andreaslindpetersen@gmail.com>",
   "license": "BSD",
