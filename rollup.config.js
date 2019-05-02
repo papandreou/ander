@@ -11,8 +11,10 @@ module.exports = {
 };
 
 if (process.env.BUILD === 'common') {
-  module.exports.plugins.unshift(require('rollup-plugin-remap')({
-    originalPath: './data/all.json',
-    targetPath: './data/common.json'
-  }));
+  module.exports.plugins.unshift(
+    require('rollup-plugin-remap')({
+      originalPath: './data/all.json',
+      targetPath: './data/common.json'
+    })
+  );
 }
