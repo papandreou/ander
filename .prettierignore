@@ -1,0 +1,5 @@
+package.json
+/coverage/
+/dist/
+/build/
+/.nyc_output/

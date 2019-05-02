@@ -1,0 +1,51 @@
+{
+  "name": "ander",
+  "version": "0.1.0",
+  "description": "Use the \"and\" list patterns from CLDR for rendering lists of items in a locale-specific format",
+  "author": "Andreas Lind <andreaslindpetersen@gmail.com>",
+  "license": "BSD",
+  "repository": "git://github.com/papandreou/ander.git",
+  "devDependencies": {
+    "cldr": "^5.0.0",
+    "coveralls": "^3.0.2",
+    "eslint": "^5.6.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-mocha": "^5.3.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "mocha": "^6.0.0",
+    "nyc": "^14.0.0",
+    "prettier": "~1.17.0",
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "rollup-plugin-remap": "0.0.3",
+    "rollup-plugin-terser": "^4.0.4",
+    "unexpected": "^11.0.0"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha",
+    "ci": "npm run extract-data && npm run build && npm run coverage && npm run lint",
+    "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text --all -- mocha --reporter dot && echo google-chrome coverage/lcov-report/index.html",
+    "extract-data": "rm -fr data && node extract-data.js",
+    "build": "rm -fr dist && mkdir dist && for BUILD in common all; do BUILD=${BUILD} rollup --config rollup.config.js --sourcemap --format umd --name fontTracer -o dist/${BUILD}.js lib/index.js; done",
+    "prepublishOnly": "npm run extract-data && npm run build"
+  },
+  "files": [
+    "dist",
+    "build"
+  ],
+  "main": "dist/all.js",
+  "browser": "dist/common.js",
+  "nyc": {
+    "include": [
+      "lib/**"
+    ]
+  }
+}
