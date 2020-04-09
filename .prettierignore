@@ -3,3 +3,6 @@ package.json
 /dist/
 /build/
 /.nyc_output/
+
+# Generated
+/CHANGELOG.md
