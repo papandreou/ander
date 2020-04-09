@@ -29,7 +29,7 @@
     "unexpected": "^11.0.0"
   },
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint . && prettier --check '**/*.{js,md}'",
     "test": "mocha",
     "ci": "npm run extract-data && npm run build && npm run coverage && npm run lint",
     "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text --all -- mocha --reporter dot && echo google-chrome coverage/lcov-report/index.html",
