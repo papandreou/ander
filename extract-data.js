@@ -10,7 +10,7 @@ const outputDir = pathModule.resolve(__dirname, 'data');
   try {
     const data = {
       common: {},
-      all: {}
+      all: {},
     };
     for (const localeId of cldr.localeIds) {
       const andPatterns = cldr.extractListPatterns(localeId).default;

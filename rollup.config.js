@@ -4,17 +4,17 @@ module.exports = {
     require('rollup-plugin-commonjs')(),
     require('rollup-plugin-node-resolve')({
       // Avoid https://github.com/rollup/rollup-plugin-node-resolve/issues/196
-      preferBuiltins: true
+      preferBuiltins: true,
     }),
-    require('rollup-plugin-terser').terser()
-  ]
+    require('rollup-plugin-terser').terser(),
+  ],
 };
 
 if (process.env.BUILD === 'common') {
   module.exports.plugins.unshift(
     require('rollup-plugin-remap')({
       originalPath: './data/all.json',
-      targetPath: './data/common.json'
+      targetPath: './data/common.json',
     })
   );
 }

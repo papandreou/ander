@@ -2,16 +2,16 @@ const expect = require('unexpected');
 
 const ander = require('../');
 
-describe('ander', function() {
-  it('should default to English and the "default" list pattern', function() {
+describe('ander', function () {
+  it('should default to English and the "default" list pattern', function () {
     expect(ander(['foo', 'bar', 'quux']), 'to equal', 'foo, bar, and quux');
   });
 
-  it('should render a list in Danish', function() {
+  it('should render a list in Danish', function () {
     expect(ander(['foo', 'bar', 'quux'], 'da'), 'to equal', 'foo, bar og quux');
   });
 
-  it('should support dashes in locale ids', function() {
+  it('should support dashes in locale ids', function () {
     expect(
       ander(['foo', 'bar', 'quux'], 'en-US'),
       'to equal',
@@ -19,7 +19,7 @@ describe('ander', function() {
     );
   });
 
-  it('should strip off locale id suffixes until there is a match', function() {
+  it('should strip off locale id suffixes until there is a match', function () {
     expect(
       ander(['foo', 'bar', 'quux'], 'en-US-FOO-BAR'),
       'to equal',
@@ -27,7 +27,7 @@ describe('ander', function() {
     );
   });
 
-  it('should fall back to root if no match is found', function() {
+  it('should fall back to root if no match is found', function () {
     expect(
       ander(['foo', 'bar', 'quux'], 'foobarquux'),
       'to equal',
@@ -35,7 +35,7 @@ describe('ander', function() {
     );
   });
 
-  it('should support an "uncommon" locale id', function() {
+  it('should support an "uncommon" locale id', function () {
     expect(
       ander(['foo', 'bar', 'quux'], 'cy'),
       'to equal',
