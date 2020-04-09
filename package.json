@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "description": "Use the \"and\" list patterns from CLDR for rendering lists of items in a locale-specific format",
   "author": "Andreas Lind <andreaslindpetersen@gmail.com>",
-  "license": "BSD",
+  "license": "BSD-3-Clause",
   "repository": "git://github.com/papandreou/ander.git",
   "devDependencies": {
     "cldr": "^5.0.0",
