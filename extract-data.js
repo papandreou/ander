@@ -1,7 +1,7 @@
 const cldr = require('cldr');
 const promisify = require('util').promisify;
 const writeFileAsync = promisify(require('fs').writeFile);
-const mkdirpAsync = promisify(require('mkdirp'));
+const mkdirp = require('mkdirp');
 const pathModule = require('path');
 const commonLocaleIds = new Set(require('./commonLocaleIds.json'));
 const outputDir = pathModule.resolve(__dirname, 'data');
@@ -21,7 +21,7 @@ const outputDir = pathModule.resolve(__dirname, 'data');
       }
     }
 
-    await mkdirpAsync(outputDir);
+    await mkdirp(outputDir);
 
     for (const bucketName of Object.keys(data)) {
       await writeFileAsync(
