@@ -17,7 +17,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "mkdirp": "^1.0.4",
-    "mocha": "^7.1.1",
+    "mocha": "^8.0.1",
     "nyc": "^15.0.1",
     "offline-github-changelog": "^1.6.1",
     "prettier": "~2.0.4",
