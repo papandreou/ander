@@ -1,8 +1,10 @@
-package.json
 /coverage/
 /dist/
 /build/
 /.nyc_output/
+
+# Don't fight npm i --save
+/package.json
 
 # Generated
 /CHANGELOG.md
