@@ -6,7 +6,7 @@
   "license": "BSD-3-Clause",
   "repository": "git://github.com/papandreou/ander.git",
   "devDependencies": {
-    "cldr": "^6.0.0",
+    "cldr": "^7.0.0",
     "coveralls": "^3.0.2",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^8.3.0",
