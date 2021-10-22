@@ -2,6 +2,7 @@
 /dist/
 /build/
 /.nyc_output/
+/data/
 
 # Don't fight npm i --save
 /package.json
