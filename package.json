@@ -32,11 +32,10 @@
   "scripts": {
     "lint": "eslint . && prettier --check '**/*.{js,json,md}'",
     "test": "mocha",
-    "test:ci": "npm run extract-data && npm run coverage",
+    "test:ci": "npm run coverage",
     "coverage": "NODE_ENV=test nyc --reporter=lcov --reporter=text --all -- mocha --reporter dot && echo google-chrome coverage/lcov-report/index.html",
-    "extract-data": "rm -fr data && node extract-data.js",
-    "prepare": "rm -fr dist && mkdir dist && for BUILD in common all; do BUILD=${BUILD} rollup --config rollup.config.js --sourcemap --format umd --name fontTracer -o dist/${BUILD}.js lib/index.js; done",
-    "prepublishOnly": "npm run extract-data && npm run prepare",
+    "prepare": "rm -fr data && node extract-data.js && npm run extract-data && rm -fr dist && mkdir dist && for BUILD in common all; do BUILD=${BUILD} rollup --config rollup.config.js --sourcemap --format umd --name fontTracer -o dist/${BUILD}.js lib/index.js; done",
+    "prepublishOnly": "npm run prepare",
     "preversion": "offline-github-changelog --next=${npm_package_version} > CHANGELOG.md && git add CHANGELOG.md"
   },
   "files": [
